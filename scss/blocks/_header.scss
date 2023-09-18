@@ -1,0 +1,492 @@
+.header {
+  width: 100%;
+  padding: 30px 0;
+  position: relative;
+
+  background: $white;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    img {
+      width: 239px;
+    }
+  }
+
+  &__social {
+    display: none;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &-link {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__menu {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    &-social {
+      margin-top: 50px;
+      display: none;
+      align-items: center;
+
+      &-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:not(:last-child) {
+          margin-right: 8.15px;
+        }
+      }
+    }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    &__item {
+      position: relative;
+
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          .menu__link {
+            color: $primary;
+          }
+          .menu__link-arrow svg path {
+            stroke: $primary;
+          }
+        }
+      }
+
+      @media (hover: none) {
+        &:active .menu__link {
+          color: $primary;
+        }
+      }
+
+      &:hover {
+        .submenu {
+          opacity: 1;
+          visibility: visible;
+          z-index: 3;
+        }
+      }
+    }
+
+    &__link {
+      font-weight: 300;
+      font-size: 15px;
+      color: $grey;
+      transition: all 0.3s;
+
+      &-arrow {
+        margin-left: 10px;
+        svg path {
+          stroke: #5c5c5c;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+
+  .submenu {
+    width: 270px;
+    padding: 12px 15px;
+    display: flex;
+    flex-direction: column;
+
+    transform: translateY(8px);
+
+    position: absolute;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: $white;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: -1;
+
+    &__item {
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
+
+    &__link {
+      font-weight: 300;
+      font-size: 15px;
+      color: $grey;
+
+      @media (hover: hover) {
+        &:hover {
+          color: $primary;
+        }
+      }
+
+      @media (hover: none) {
+        &:active {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &__right {
+    margin-left: 148px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__address {
+    font-weight: 300;
+    font-size: 15px;
+    color: #000000;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+
+    &-telegram {
+      margin-right: 20px;
+
+      @media (hover: hover) {
+        &:hover svg path {
+          stroke: $primary;
+        }
+      }
+
+      @media (hover: none) {
+        &:active svg path {
+          stroke: $primary;
+        }
+      }
+    }
+
+    &-whatsapp {
+      margin-right: 20px;
+
+      @media (hover: hover) {
+        &:hover svg path {
+          stroke: $primary;
+        }
+      }
+
+      @media (hover: none) {
+        &:active svg path {
+          stroke: $primary;
+        }
+      }
+    }
+
+    &-phone {
+      font-weight: 300;
+      font-size: 15px;
+      color: $grey;
+
+      @media (hover: hover) {
+        &:hover {
+          color: $primary;
+        }
+      }
+
+      @media (hover: none) {
+        &:active {
+          color: $primary;
+        }
+      }
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+    }
+
+    span {
+      font-weight: 300;
+      font-size: 15px;
+      color: $grey;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    width: 24px;
+    height: 16px;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    margin-left: auto;
+    span {
+      width: 24px;
+      height: 2px;
+      background: $grey;
+      position: relative;
+      transition: all 0.3s;
+      &::before {
+        content: "";
+        width: 24px;
+        height: 2px;
+        position: absolute;
+        left: 0;
+
+        background: $grey;
+        transition: all 0.3s;
+        transform: translateY(-7px);
+      }
+      &::after {
+        content: "";
+        width: 24px;
+        height: 2px;
+        position: absolute;
+        left: 0;
+
+        background: $grey;
+        transition: all 0.3s;
+        transform: translateY(7px);
+      }
+    }
+    &.hamburger--active {
+      span {
+        width: 24px;
+        height: 2px;
+        position: relative;
+        background: transparent;
+        &::before {
+          transform: rotate(45deg);
+          background: $white;
+        }
+        &::after {
+          transform: rotate(-45deg);
+          background: $white;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .header {
+    &__right {
+      margin-left: 75px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .header {
+    &__right {
+      margin-left: 35px;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .header {
+    padding: 20px 0;
+
+    &__social {
+      display: flex;
+    }
+
+    &__menu {
+      width: 50%;
+      height: 100vh;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      background: #5c5c5c;
+      z-index: 5;
+      transition: all 0.3s;
+      overflow-y: auto;
+
+      &.header__menu--active {
+        right: 0;
+      }
+
+      &-social {
+        display: flex;
+      }
+    }
+
+    .menu {
+      align-items: flex-start;
+      flex-direction: column;
+      &__item {
+        position: relative;
+
+        &:not(:last-child) {
+          margin: 0 0 20px;
+        }
+      }
+
+      &__link {
+        font-size: 18px;
+        color: $white;
+        &-arrow {
+          display: none;
+        }
+      }
+    }
+
+    .submenu {
+      width: 100%;
+      padding: 15px 10px 0;
+      position: inherit;
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+      transform: translateY(0);
+      border-radius: 0;
+      background: transparent;
+
+      &__link {
+        color: $white;
+        font-size: 15px;
+      }
+    }
+
+    &__right {
+      margin: 45px 0 0;
+      align-items: flex-start;
+    }
+
+    &__address {
+      margin-top: 20px;
+      font-size: 15px;
+      color: $white;
+    }
+
+    &__links {
+      &-telegram {
+        display: none;
+      }
+
+      &-whatsapp {
+        display: none;
+      }
+
+      &-phone {
+        font-size: 15px;
+        color: $white;
+      }
+    }
+
+    .hamburger {
+      display: flex;
+      z-index: 6;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    &__logo {
+      max-width: 180px;
+
+      img {
+        max-width: 180px;
+      }
+    }
+
+    &__menu {
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .header {
+    &__menu {
+      width: 100%;
+    }
+
+    &__social {
+      margin: 0 auto;
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: translate(0);
+    }
+
+    &__links {
+      width: 150px;
+      flex-wrap: wrap;
+      &-telegram {
+        display: block;
+        svg {
+          width: 19px;
+          height: 19px;
+          path {
+            fill: $white;
+          }
+        }
+      }
+
+      &-whatsapp {
+        display: block;
+        svg {
+          width: 19px;
+          height: 19px;
+          path {
+            fill: $white;
+          }
+        }
+      }
+
+      &-phone {
+        margin-top: 50px;
+      }
+    }
+
+    .hamburger {
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    &__logo {
+      max-width: 150px;
+      img {
+        width: 150px;
+      }
+    }
+  }
+}

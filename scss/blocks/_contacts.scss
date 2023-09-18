@@ -1,0 +1,351 @@
+.contacts-page {
+  position: relative;
+
+  .header {
+    position: relative;
+    z-index: 3;
+    background: rgba(27, 100, 148, 0);
+  }
+
+  .footer {
+    display: none;
+  }
+}
+
+.contacts {
+  width: 100%;
+  height: calc(100vh - 69px);
+  position: relative;
+
+  &__inner {
+    padding: 100px 0 0;
+  }
+
+  &__info {
+    width: 390px;
+    padding: 40px;
+    border-radius: 40px;
+    background: $white;
+    position: relative;
+    z-index: 1;
+
+    &-title {
+      font-size: 30px;
+      color: $grey;
+      text-transform: uppercase;
+    }
+
+    &-address {
+      margin-top: 32px;
+      font-weight: 300;
+      font-size: 15px;
+      color: $grey;
+    }
+
+    &-tel {
+      margin-top: 17px;
+      font-weight: 300;
+      font-size: 15px;
+      color: $grey;
+      a {
+        display: block;
+      }
+    }
+
+    &-email {
+      margin-top: 17px;
+      font-weight: 300;
+      font-size: 15px;
+      color: $grey;
+      a {
+        display: block;
+      }
+    }
+
+    &-social {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      a {
+        &:nth-child(1) {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    &-2gis {
+      height: 40px;
+      margin-top: 32px;
+      padding: 0 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      color: $white;
+      border-radius: 24px;
+      background: $primary;
+    }
+
+    &-yandex {
+      height: 40px;
+      margin-top: 17px;
+      padding: 0 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      color: $white;
+      border-radius: 24px;
+      background: $primary;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    height: calc(100vh - 69px);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &-info {
+      display: none;
+    }
+  }
+
+  #id_169358457888267454973 {
+    max-width: 300px;
+  }
+
+  .ymaps-2-1-79-balloon__content {
+    max-width: 300px;
+  }
+
+  .balloon__name {
+    max-width: 280px;
+    font-size: 16px;
+    color: $primary;
+  }
+
+  .balloon__info {
+    max-width: 280px;
+    font-size: 14px;
+  }
+
+  &__social {
+    padding: 10px 30px;
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
+    z-index: 2;
+    border-radius: 15px;
+    background: $white;
+
+    &-link {
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        @media (hover: hover) {
+          &:hover svg path {
+            stroke: $primary;
+            fill: $primary !important;
+          }
+        }
+
+        @media (hover: none) {
+          &:active svg path {
+            fill: $primary;
+            stroke: $primary !important;
+          }
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover svg path {
+          stroke: $primary;
+          fill: none !important;
+        }
+      }
+
+      @media (hover: none) {
+        &:active svg path {
+          fill: none !important;
+          stroke: $primary;
+        }
+      }
+    }
+  }
+}
+
+.footer-contacts {
+  margin-top: 77px;
+
+  &__inner {
+    padding: 0 100px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      font-size: 20px;
+      font-weight: 300;
+      color: $grey;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0.5px;
+        background: $grey;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: $primary;
+          &::before {
+            background: $primary;
+          }
+        }
+      }
+
+      @media (hover: none) {
+        &:active {
+          color: $primary;
+          &::before {
+            background: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer-contacts {
+    &__inner {
+      padding: 0 50px 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contacts {
+    height: calc(100vh - 64px);
+
+    &__info {
+      width: 300px;
+      padding: 20px;
+      border-radius: 20px;
+
+      &-title {
+        font-size: 24px;
+      }
+
+      &-address {
+        margin-top: 17px;
+        font-size: 15px;
+      }
+
+      &-tel {
+        margin-top: 10px;
+        font-size: 15px;
+      }
+
+      &-email {
+        margin-top: 10px;
+        font-size: 15px;
+      }
+
+      &-social {
+        margin-top: 17px;
+        a {
+          width: 17px;
+        }
+      }
+
+      &-2gis {
+        height: 30px;
+        margin-top: 17px;
+        padding: 0 10px;
+        font-size: 13px;
+        border-radius: 12px;
+      }
+
+      &-yandex {
+        height: 30px;
+        margin-top: 17px;
+        padding: 0 10px;
+        font-size: 13px;
+        border-radius: 12px;
+      }
+    }
+
+    &__social {
+      padding: 5px 15px;
+
+      &-link {
+        &:nth-child(1) {
+          width: 23px;
+        }
+        &:nth-child(2) {
+          width: 16px;
+        }
+        &:nth-child(3) {
+          width: 21px;
+        }
+        &:nth-child(4) {
+          width: 17px;
+        }
+      }
+    }
+
+    .map {
+      height: calc(100vh - 64px);
+    }
+  }
+
+  .footer-contacts {
+    margin-top: 44px;
+
+    &__inner {
+      padding: 0 0 50px;
+    }
+
+    a {
+      font-size: 16px;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .contacts {
+    &__info {
+      width: 220px;
+      padding: 20px 10px;
+      border-radius: 15px;
+    }
+  }
+
+  .footer-contacts {
+    margin-top: 30px;
+
+    &__inner {
+      padding: 0 0 30px;
+      flex-direction: column;
+      align-items: flex-start;
+
+      a {
+        &:nth-child(2) {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "./reset";
+@import "./vars";
+@import "./fonts";
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $grey;
+  scroll-behavior: smooth;
+  background: var(--light-grey, #fafafa);
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1180px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@import "./blocks/header";
+@import "./blocks/intro";
+@import "./blocks/step";
+@import "./blocks/method";
+@import "./blocks/transfer";
+@import "./blocks/person";
+@import "./blocks/patient";
+@import "./blocks/feedback";
+@import "./blocks/doctor";
+@import "./blocks/region";
+@import "./blocks/clinic";
+@import "./blocks/licence";
+@import "./blocks/faq";
+@import "./blocks/footer";
+@import "./blocks/modal";
+@import "./blocks/contacts";
+@import "./blocks/price";
+@import "./blocks/price-modal";
+@import "./blocks/template";
